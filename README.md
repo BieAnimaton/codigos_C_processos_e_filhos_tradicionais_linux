@@ -64,7 +64,7 @@ O comando "exit(0);" é mais aconselhado para esta tarefa.
 pid_t var;
 ...
 var = fork();
-if (var ==0) {
+if (var == 0) {
 	printf("O meu PID e %d.\n",getpid());
 	printf("O PID do meu PAI e %d.\n", getppid());
   ..
@@ -82,7 +82,7 @@ pid_t var;
 int estado;
 ...
 var = fork();
-if (var ==0) {
+if (var == 0) {
 	printf("O meu PID e %d.\n",getpid());
 	printf("O PID do meu PAI e %d.\n", getppid());
   ..
@@ -100,7 +100,7 @@ pid_t filho1, filho2;
 int estado, valor = 10;
 
 filho1 = fork();
-if ( filho1 == 0) {
+if (filho1 == 0) {
    valor = valor + 5;
    printf("Processo-Filho 1: O valor de VALOR e %d.\n", valor);
    sleep(5);
@@ -109,9 +109,9 @@ if ( filho1 == 0) {
 }
 
 filho2 = fork();
-if ( filho2 == 0) {
+if (filho2 == 0) {
    valor = valor - 2;
-	 printf("Processo-Filho 2: O valor de VALOR e %d.\n", valor);
+   printf("Processo-Filho 2: O valor de VALOR e %d.\n", valor);
    sleep(5);
    printf("Processo-Filho 2: Encerrando a execucao.\n");
    exit(0);
