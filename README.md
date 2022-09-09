@@ -24,7 +24,7 @@ var = fork();
 ```
 A "var" do filho copia "var" do pai, ou seja, "var" do filho é igual a 0, PORÉM, "var" do pai recebe o "PID" do processo filho e é alterado  
 - **"var" do filho = 0**  
-- **"var" do pai = 18463** (número escolhido aleatoriamente - sempre muda)
+- **"var" do pai = 18463** (PID do filho - número escolhido aleatoriamente)
 
 ## Criar condição para apenas o filho executar.
 ```
