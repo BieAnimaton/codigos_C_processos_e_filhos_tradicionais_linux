@@ -3,8 +3,8 @@
 Códigos feitos em C para criar e manipular processos tradicionais e filhos tradicionais no Linux (distro usada: Slax)
 
 # Observações adicionais:
-Para compilar: cc progN.c -o progN  
-Para executar: ./progN
+Para compilar: `cc progN.c -o progN`  
+Para executar: `./progN`
 
 ## Comando para criar processo filho através do Gerenciador de Processos.
 ```
@@ -40,7 +40,7 @@ sleep(3);
 printf("Sou o processo pai");
 ...
 ```
-Caso não coloquemos nenhum comando de finalização no bloco do filho, o próprio filho "escaprá" de seu bloco e executará o "printf()" de fora, ou seja, a linha do pai.  
+Caso não coloquemos nenhum comando de finalização no bloco do filho, o próprio filho "escaprá" de seu bloco e executará o `printf()` de fora, ou seja, a linha do pai.  
 
 Ao rodarmos o exemplo, a frase "Sou o processo pai" é impressa duas vezes (uma depois de 3 segundos - pelo pai - e a outra depois da finalização do programa - pelo filho -).
 ## Comando para finalização do processo filho.
@@ -58,7 +58,7 @@ sleep(3);
 printf("Sou o processo pai");
 ...
 ```
-O comando "exit(0);" é mais aconselhado para esta tarefa.
+O comando `exit(0);` é mais aconselhado para esta tarefa.
 ## Imprimindo identificadores do próprio processo e do processo pai.
 ```
 pid_t var;
@@ -74,8 +74,8 @@ sleep(3);
 printf("Sou o processo pai");
 ...
 ```
-- **"getpid()"**: retorna o PID (identificador) do processo  
-- **"getppid()"**: retorna o PID (identificador) do pai (parent) do processo  
+- `getpid()`: retorna o PID (identificador) do processo  
+- `getppid()`: retorna o PID (identificador) do pai (parent) do processo  
 ## Usar "sleep(N);" não é recomendado - usar "waitpid(x, y, 0);.
 ```
 pid_t var;
@@ -92,7 +92,7 @@ waitpid(var, estado, 0)
 printf("Sou o processo pai");
 ...
 ```
-O comando "waitpid()" segue a seguinte lógica: quando o "estado" de "var" for 0, encerro.  
+O comando `waitpid()` segue a seguinte lógica: quando o "estado" de "var" for 0, encerrar o filho.  
 ## Variáveis não são compartilhadas.
 Como estamos trabalhando com processos **TRADICIONAIS**, precisamos lembrar que o filho é uma copia por completo do pai, mas não compartilham nada entre si.  
 ```
